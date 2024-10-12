@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6wlvu3q8tj2w"]
+
+[ext_resource type="Texture2D" uid="uid://c1qamvrisi2vl" path="res://myassests/thorns-Photoroom.png-Photoroom (1).png" id="1_m8uft"]
+[ext_resource type="Texture2D" uid="uid://b0g71jqciqt47" path="res://stripes/1.png" id="2_fc6vq"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Thorns-photoroom_png-photoroom(1)" type="Sprite2D" parent="."]
+rotation = -1.5708
+scale = Vector2(0.659091, 0.671429)
+texture = ExtResource("1_m8uft")
+
+[node name="Thorns-photoroom_png-photoroom(1)2" type="Sprite2D" parent="."]
+position = Vector2(-6.03961e-14, -17)
+rotation = -1.5708
+scale = Vector2(0.659091, 0.671429)
+texture = ExtResource("1_m8uft")
+
+[node name="Thorns-photoroom_png-photoroom(1)3" type="Sprite2D" parent="."]
+position = Vector2(7.10542e-14, 17)
+rotation = -1.5708
+scale = Vector2(0.659091, 0.671429)
+texture = ExtResource("1_m8uft")
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(13.25, 0.500002)
+scale = Vector2(0.0267442, 0.392593)
+texture = ExtResource("2_fc6vq")

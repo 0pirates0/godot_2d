@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdjh66x0mwipu"]
+
+[ext_resource type="Texture2D" uid="uid://dc5rvwgq6ff86" path="res://myassests/360_F_195930867_2KPqhYqA9kSL2f8tt4DVkKNCP3tLkH5c.jpg" id="1_urwjo"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="360F1959308672kPqhYqA9kSl2f8Tt4dVkKncp3tLkH5c" type="Sprite2D" parent="."]
+position = Vector2(323, 198)
+texture = ExtResource("1_urwjo")

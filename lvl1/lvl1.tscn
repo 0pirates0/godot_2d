@@ -1,0 +1,197 @@
+[gd_scene load_steps=20 format=3 uid="uid://emd76aovu7yl"]
+
+[ext_resource type="PackedScene" uid="uid://5puket5ycx1t" path="res://Player/Player.tscn" id="1_5phx5"]
+[ext_resource type="Script" path="res://lvl1/CollisionShape2D.gd" id="2_nl3nu"]
+[ext_resource type="PackedScene" uid="uid://d8yoxrsjr54k" path="res://thorns.tscn" id="2_xfu5v"]
+[ext_resource type="PackedScene" uid="uid://bd5kti5rvwe44" path="res://dis.tscn" id="3_ddfn5"]
+[ext_resource type="Script" path="res://thorns.gd" id="4_janmp"]
+[ext_resource type="Texture2D" uid="uid://b0g71jqciqt47" path="res://stripes/1.png" id="6_2hmq0"]
+[ext_resource type="Script" path="res://lvl1/trigger2.gd" id="6_ynifk"]
+[ext_resource type="PackedScene" uid="uid://fsn1q6skp0lu" path="res://tunnel.tscn" id="8_hraiu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rqac"]
+size = Vector2(225, 107)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ue854"]
+size = Vector2(515, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edu0p"]
+size = Vector2(61, 261)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xergy"]
+size = Vector2(22, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwev7"]
+size = Vector2(181.5, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jofga"]
+size = Vector2(22.25, 127.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pxxj"]
+size = Vector2(29, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmjmj"]
+size = Vector2(20, 16)
+
+[sub_resource type="Animation" id="Animation_vhd4d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(674, 225)]
+}
+
+[sub_resource type="Animation" id="Animation_tjiiy"]
+resource_name = "appear"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(674, 225), Vector2(674, 204)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kigmb"]
+_data = {
+"RESET": SubResource("Animation_vhd4d"),
+"appear": SubResource("Animation_tjiiy")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(117.5, 268)
+shape = SubResource("RectangleShape2D_4rqac")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(670.5, 269)
+shape = SubResource("RectangleShape2D_ue854")
+
+[node name="wall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-20.5, 120.5)
+shape = SubResource("RectangleShape2D_edu0p")
+
+[node name="wall2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1002, 114)
+shape = SubResource("RectangleShape2D_edu0p")
+
+[node name="Player" parent="." instance=ExtResource("1_5phx5")]
+position = Vector2(28, 13)
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 5.0
+offset_top = 214.0
+offset_right = 231.0
+offset_bottom = 323.0
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 413.0
+offset_top = 214.0
+offset_right = 929.0
+offset_bottom = 323.0
+
+[node name="trigger" type="Area2D" parent="." groups=["trigger"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trigger"]
+position = Vector2(217, 183)
+shape = SubResource("RectangleShape2D_xergy")
+script = ExtResource("2_nl3nu")
+
+[node name="Node2D" parent="." instance=ExtResource("2_xfu5v")]
+position = Vector2(241, 226)
+
+[node name="Node2D5" parent="." instance=ExtResource("2_xfu5v")]
+position = Vector2(298, 226)
+
+[node name="Node2D6" parent="." instance=ExtResource("2_xfu5v")]
+position = Vector2(317, 226)
+
+[node name="Node2D7" parent="." instance=ExtResource("2_xfu5v")]
+position = Vector2(335, 226)
+
+[node name="Node2D8" parent="." instance=ExtResource("2_xfu5v")]
+position = Vector2(353, 226)
+
+[node name="Node2D9" parent="." instance=ExtResource("2_xfu5v")]
+position = Vector2(370, 226)
+
+[node name="Node2D10" parent="." instance=ExtResource("2_xfu5v")]
+position = Vector2(388, 226)
+
+[node name="Node2D11" parent="." instance=ExtResource("2_xfu5v")]
+position = Vector2(405, 226)
+
+[node name="Node2D2" parent="." instance=ExtResource("2_xfu5v")]
+position = Vector2(260, 226)
+
+[node name="Node2D3" parent="." instance=ExtResource("2_xfu5v")]
+position = Vector2(279, 226)
+
+[node name="thorn" type="Area2D" parent="." groups=["thorns"]]
+
+[node name="dedzone" type="CollisionShape2D" parent="thorn"]
+position = Vector2(322.25, 232)
+shape = SubResource("RectangleShape2D_uwev7")
+
+[node name="Node2D4" parent="." instance=ExtResource("3_ddfn5")]
+position = Vector2(405, 267)
+
+[node name="trigger2" type="Area2D" parent="." groups=["trigger2"]]
+script = ExtResource("6_ynifk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trigger2"]
+position = Vector2(645, 150)
+shape = SubResource("RectangleShape2D_jofga")
+
+[node name="Node2D13" parent="." instance=ExtResource("8_hraiu")]
+position = Vector2(946, 253)
+
+[node name="tunlvl1" type="Area2D" parent="Node2D13" groups=["tunnel"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D13/tunlvl1"]
+position = Vector2(0, -48)
+shape = SubResource("RectangleShape2D_4pxxj")
+
+[node name="thorns" parent="." instance=ExtResource("2_xfu5v")]
+position = Vector2(674, 225)
+script = ExtResource("4_janmp")
+
+[node name="Area2D" type="Area2D" parent="thorns"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="thorns/Area2D"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_nmjmj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="thorns"]
+libraries = {
+"": SubResource("AnimationLibrary_kigmb")
+}
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(674, 227)
+scale = Vector2(0.0651162, 0.17963)
+texture = ExtResource("6_2hmq0")
+
+[connection signal="area_entered" from="trigger" to="Player" method="_on_trigger_area_entered"]
+[connection signal="area_entered" from="trigger" to="Node2D4" method="_on_trigger_area_entered"]
+[connection signal="area_entered" from="thorn" to="Player" method="_on_thorn_area_entered"]
+[connection signal="area_entered" from="trigger2" to="trigger2" method="_on_area_entered"]
+[connection signal="area_entered" from="trigger2" to="thorns" method="_on_trigger_2_area_entered"]
+[connection signal="area_entered" from="Node2D13/tunlvl1" to="Player" method="_on_tunlvl_1_area_entered"]
+[connection signal="area_entered" from="Node2D13/tunlvl1" to="thorns" method="_on_tunlvl_1_area_entered"]
+[connection signal="area_entered" from="thorns/Area2D" to="Player" method="_on_area_2d_area_entered"]

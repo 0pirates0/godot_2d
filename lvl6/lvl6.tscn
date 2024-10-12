@@ -1,0 +1,147 @@
+[gd_scene load_steps=17 format=3 uid="uid://cfwvqtu8jrj8u"]
+
+[ext_resource type="Texture2D" uid="uid://blm1d2l3xufl8" path="res://myassests/water.jpg" id="1_3j42q"]
+[ext_resource type="Texture2D" uid="uid://4orgjllumwqt" path="res://myassests/Background.png" id="1_378ha"]
+[ext_resource type="Texture2D" uid="uid://dyvha1afnkyfe" path="res://myassests/ground.png" id="1_mx6uc"]
+[ext_resource type="PackedScene" uid="uid://5puket5ycx1t" path="res://Player/Player.tscn" id="3_q7wtg"]
+[ext_resource type="PackedScene" uid="uid://fsn1q6skp0lu" path="res://tunnel.tscn" id="5_bejgf"]
+[ext_resource type="Texture2D" uid="uid://bjrpmgv3magym" path="res://myassests/jack.png" id="6_q7wv0"]
+[ext_resource type="PackedScene" uid="uid://cgeso1rrceh0a" path="res://textbox.tscn" id="7_rh7q4"]
+[ext_resource type="Texture2D" uid="uid://h0xd3477uso2" path="res://myassests/rumbottle.png" id="8_tpch4"]
+[ext_resource type="Script" path="res://lvl6/rum.gd" id="9_ous8k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ib4cw"]
+size = Vector2(517, 204)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfias"]
+size = Vector2(27.25, 305)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68vsa"]
+size = Vector2(1617.63, 35.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mtk4i"]
+size = Vector2(82.3125, 287)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmcs6"]
+size = Vector2(1582, 439)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwas5"]
+size = Vector2(23, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b16pa"]
+size = Vector2(28.5, 15)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(715, 201)
+texture = ExtResource("1_378ha")
+
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(350, 201)
+texture = ExtResource("1_378ha")
+
+[node name="Background6" type="Sprite2D" parent="."]
+position = Vector2(-10, 201)
+texture = ExtResource("1_378ha")
+
+[node name="Background7" type="Sprite2D" parent="."]
+position = Vector2(-350, 201)
+texture = ExtResource("1_378ha")
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(1080, 201)
+texture = ExtResource("1_378ha")
+
+[node name="Background4" type="Sprite2D" parent="."]
+position = Vector2(1445, 201)
+texture = ExtResource("1_378ha")
+
+[node name="Background5" type="Sprite2D" parent="."]
+position = Vector2(1811, 200)
+texture = ExtResource("1_378ha")
+
+[node name="Water" type="Sprite2D" parent="."]
+position = Vector2(1204.25, 538)
+scale = Vector2(2.07255, 1)
+texture = ExtResource("1_3j42q")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Ground" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(263, 453)
+texture = ExtResource("1_mx6uc")
+
+[node name="Ground2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-215, 453)
+scale = Vector2(0.866499, 1)
+texture = ExtResource("1_mx6uc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(278, 412)
+shape = SubResource("RectangleShape2D_ib4cw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-34.375, 240.5)
+shape = SubResource("RectangleShape2D_qfias")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1222.19, 771)
+shape = SubResource("RectangleShape2D_68vsa")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(369.844, 642.5)
+shape = SubResource("RectangleShape2D_mtk4i")
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("3_q7wtg")]
+position = Vector2(410, 262)
+
+[node name="waterarea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="waterarea"]
+position = Vector2(1203, 536.5)
+shape = SubResource("RectangleShape2D_gmcs6")
+
+[node name="Node2D" parent="." instance=ExtResource("5_bejgf")]
+position = Vector2(4, 347)
+
+[node name="Jack" type="Sprite2D" parent="."]
+position = Vector2(279, 283)
+scale = Vector2(0.160533, 0.162921)
+texture = ExtResource("6_q7wv0")
+
+[node name="textbox" parent="." instance=ExtResource("7_rh7q4")]
+offset_left = 178.0
+offset_top = 215.0
+offset_right = 369.0
+offset_bottom = 254.0
+
+[node name="Rumbottle" type="Sprite2D" parent="."]
+position = Vector2(89, 216)
+scale = Vector2(1, 1.09524)
+texture = ExtResource("8_tpch4")
+
+[node name="rum" type="RigidBody2D" parent="."]
+script = ExtResource("9_ous8k")
+
+[node name="Rumbottle2" type="Sprite2D" parent="rum"]
+position = Vector2(1456, 745)
+rotation = 1.5753
+scale = Vector2(0.224918, 0.173468)
+texture = ExtResource("8_tpch4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rum"]
+position = Vector2(1452.5, 745)
+shape = SubResource("RectangleShape2D_bwas5")
+
+[node name="rumarea" type="Area2D" parent="rum/CollisionShape2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rum/CollisionShape2D/rumarea"]
+position = Vector2(1.75, -0.5)
+shape = SubResource("RectangleShape2D_b16pa")
+
+[connection signal="body_entered" from="waterarea" to="Player" method="_on_waterarea_body_entered"]
+[connection signal="body_exited" from="waterarea" to="Player" method="_on_waterarea_body_exited"]
+[connection signal="body_entered" from="rum/CollisionShape2D/rumarea" to="rum" method="_on_rumarea_body_entered"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4lapjgkij6o"]
+
+[ext_resource type="Texture2D" uid="uid://b0g71jqciqt47" path="res://stripes/1.png" id="1_ay3a7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5hxe"]
+size = Vector2(18, 18)
+
+[node name="box" type="RigidBody2D"]
+mass = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_q5hxe")
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(3.57628e-07, 1.14739e-06)
+scale = Vector2(0.0418605, 0.133333)
+texture = ExtResource("1_ay3a7")

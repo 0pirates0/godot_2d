@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbok467f7u46c"]
+
+[ext_resource type="Texture2D" uid="uid://joy2fs4h2ypr" path="res://stripes/enemy-removebg-preview.png" id="1_q5q1f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_btp8a"]
+radius = 13.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Enemy-removebg-preview" type="Sprite2D" parent="."]
+texture = ExtResource("1_q5q1f")
+
+[node name="earea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="earea"]
+shape = SubResource("CircleShape2D_btp8a")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnsri3myq3x0g"]
+
+[ext_resource type="Texture2D" uid="uid://bueoi6r2m48x1" path="res://myassests/butbase.png" id="2_26mme"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yri7"]
+size = Vector2(31, 1.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l66n1"]
+size = Vector2(5, 13.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enx74"]
+size = Vector2(4, 14)
+
+[node name="button" type="StaticBody2D"]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(1, 5)
+shape = SubResource("RectangleShape2D_6yri7")
+
+[node name="Butbase" type="Sprite2D" parent="CollisionShape2D3"]
+position = Vector2(-1, -5)
+scale = Vector2(0.318471, 0.335)
+texture = ExtResource("2_26mme")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-17.5, 6.625)
+shape = SubResource("RectangleShape2D_l66n1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(18, 7)
+shape = SubResource("RectangleShape2D_enx74")

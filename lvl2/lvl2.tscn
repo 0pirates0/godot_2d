@@ -1,0 +1,316 @@
+[gd_scene load_steps=34 format=3 uid="uid://b2umdwftq44a6"]
+
+[ext_resource type="PackedScene" uid="uid://cbok467f7u46c" path="res://john/john.tscn" id="1_71m78"]
+[ext_resource type="Script" path="res://john/john.gd" id="2_b2b1f"]
+[ext_resource type="PackedScene" uid="uid://5puket5ycx1t" path="res://Player/Player.tscn" id="3_4i6ld"]
+[ext_resource type="Script" path="res://lvl2/mobded.gd" id="3_adnyu"]
+[ext_resource type="PackedScene" uid="uid://fsn1q6skp0lu" path="res://tunnel.tscn" id="5_7kxo3"]
+[ext_resource type="PackedScene" uid="uid://cdgqbsn81cr4b" path="res://mov_t.tscn" id="6_ruw8b"]
+[ext_resource type="Script" path="res://mov_t.gd" id="7_wbi4f"]
+[ext_resource type="Texture2D" uid="uid://b0g71jqciqt47" path="res://stripes/1.png" id="8_k47ek"]
+[ext_resource type="PackedScene" uid="uid://c6wlvu3q8tj2w" path="res://faket.tscn" id="9_fasd3"]
+[ext_resource type="Script" path="res://faket.gd" id="10_yvmfx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d6x2w"]
+radius = 13.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t6jr1"]
+radius = 14.0
+
+[sub_resource type="Animation" id="Animation_5ldkw"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_1ew44"]
+resource_name = "nottrigg"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1109, 189), Vector2(900, 189), Vector2(1110, 189)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iwvqr"]
+_data = {
+"RESET": SubResource("Animation_5ldkw"),
+"nottrigg": SubResource("Animation_1ew44")
+}
+
+[sub_resource type="Animation" id="Animation_kd45g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1109, 189)]
+}
+
+[sub_resource type="Animation" id="Animation_p0ouy"]
+resource_name = "trigg"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1109, 189), Vector2(900, 189), Vector2(1109, 189)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bk06y"]
+_data = {
+"RESET": SubResource("Animation_kd45g"),
+"trigg": SubResource("Animation_p0ouy")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hig0j"]
+size = Vector2(16, 112.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gdhq"]
+size = Vector2(781, 189)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3bqd"]
+size = Vector2(551, 206)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqgsk"]
+size = Vector2(20, 280)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h6qdq"]
+radius = 15.0
+height = 86.0
+
+[sub_resource type="Animation" id="Animation_bcr8m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1635, 146)]
+}
+
+[sub_resource type="Animation" id="Animation_8x865"]
+resource_name = "rush"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1635, 146), Vector2(1109, 146), Vector2(1109, 146), Vector2(1109, 260)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ex6qp"]
+_data = {
+"RESET": SubResource("Animation_bcr8m"),
+"rush": SubResource("Animation_8x865")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2ilj"]
+size = Vector2(9, 155)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6q6f3"]
+size = Vector2(100, 236)
+
+[sub_resource type="Animation" id="Animation_0ipmq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(861, 240)]
+}
+
+[sub_resource type="Animation" id="Animation_q8gnc"]
+resource_name = "prop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(861, 240), Vector2(151, 240)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1xypi"]
+_data = {
+"RESET": SubResource("Animation_0ipmq"),
+"prop": SubResource("Animation_q8gnc")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05n50"]
+size = Vector2(20, 194)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5iev"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 106.0
+offset_top = 277.0
+offset_right = 887.0
+offset_bottom = 470.0
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 886.0
+offset_top = 204.0
+offset_right = 1437.0
+offset_bottom = 409.0
+pivot_offset = Vector2(439, -32)
+
+[node name="Node2D" parent="." instance=ExtResource("1_71m78")]
+position = Vector2(1109, 189)
+script = ExtResource("2_b2b1f")
+
+[node name="mobarea" type="Area2D" parent="Node2D" groups=["mobarea"]]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/mobarea"]
+visible = false
+shape = SubResource("CircleShape2D_d6x2w")
+
+[node name="mobded" type="Area2D" parent="Node2D" groups=["mobded"]]
+script = ExtResource("3_adnyu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/mobded"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_t6jr1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+libraries = {
+"": SubResource("AnimationLibrary_iwvqr")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Node2D"]
+libraries = {
+"": SubResource("AnimationLibrary_bk06y")
+}
+
+[node name="trigger" type="Area2D" parent="." groups=["trigger"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trigger"]
+position = Vector2(895, 146.25)
+shape = SubResource("RectangleShape2D_hig0j")
+
+[node name="Player" parent="." instance=ExtResource("3_4i6ld")]
+position = Vector2(137, 97)
+
+[node name="panel" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="panel"]
+position = Vector2(496.5, 371.5)
+shape = SubResource("RectangleShape2D_4gdhq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="panel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="panel/StaticBody2D"]
+position = Vector2(1161.5, 307)
+shape = SubResource("RectangleShape2D_r3bqd")
+
+[node name="wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+position = Vector2(93, 154)
+shape = SubResource("RectangleShape2D_oqgsk")
+
+[node name="Node2D2" parent="." instance=ExtResource("5_7kxo3")]
+position = Vector2(1454, 243)
+
+[node name="Node2D3" parent="." instance=ExtResource("6_ruw8b")]
+position = Vector2(1635, 146)
+script = ExtResource("7_wbi4f")
+
+[node name="mtarea" type="Area2D" parent="Node2D3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D3/mtarea"]
+position = Vector2(6, 0)
+shape = SubResource("CapsuleShape2D_h6qdq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D3"]
+libraries = {
+"": SubResource("AnimationLibrary_ex6qp")
+}
+
+[node name="mtrigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mtrigger"]
+position = Vector2(1275.5, 123.5)
+shape = SubResource("RectangleShape2D_e2ilj")
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(1115, 272)
+scale = Vector2(0.141861, 1)
+texture = ExtResource("8_k47ek")
+
+[node name="wall2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+position = Vector2(1530, 71)
+shape = SubResource("RectangleShape2D_6q6f3")
+
+[node name="faket" parent="." instance=ExtResource("9_fasd3")]
+position = Vector2(861, 240)
+script = ExtResource("10_yvmfx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="faket"]
+libraries = {
+"": SubResource("AnimationLibrary_1xypi")
+}
+
+[node name="trigfake" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trigfake"]
+position = Vector2(318, 179)
+shape = SubResource("RectangleShape2D_05n50")
+
+[node name="nxtlvl" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nxtlvl"]
+position = Vector2(1455, 195)
+shape = SubResource("RectangleShape2D_j5iev")
+
+[connection signal="area_entered" from="Node2D/mobarea" to="Player" method="_on_mobarea_area_entered"]
+[connection signal="area_entered" from="Node2D/mobded" to="Node2D/mobded" method="_on_area_entered"]
+[connection signal="area_entered" from="Node2D/mobded" to="Player" method="_on_mobded_area_entered"]
+[connection signal="area_entered" from="trigger" to="Node2D" method="_on_trigger_area_entered"]
+[connection signal="area_entered" from="Node2D3/mtarea" to="Player" method="_on_mtarea_area_entered"]
+[connection signal="area_entered" from="mtrigger" to="Node2D3" method="_on_mtrigger_area_entered"]
+[connection signal="area_entered" from="trigfake" to="faket" method="_on_trigfake_area_entered"]
+[connection signal="area_entered" from="nxtlvl" to="Player" method="_on_nxtlvl_area_entered"]
